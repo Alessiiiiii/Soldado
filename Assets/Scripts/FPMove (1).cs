@@ -10,16 +10,23 @@ public class FPMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
         
     }
 
     void Update()
     {
-        
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-             
-        rb.AddForce(move *  PlayerSpeed);
 
-       
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        Vector3 moveRelative = transform.TransformDirection(move) * PlayerSpeed * Time.deltaTime;
+
+        rb.MovePosition(rb.position + moveRelative);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
