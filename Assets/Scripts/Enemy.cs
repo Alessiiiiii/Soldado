@@ -19,20 +19,35 @@ public class Enemy : MonoBehaviour
 
     private void UpdateUI()
     {
+        //some code
         enemyHealthUI.text = Health.ToString();
+        // more code
+    }
+  
+    public void TimeOut()
+    {
+        Death();
     }
 
-    
     public void ChangeHealth(int damage)
     {
         Health += damage;
-
+                
         UpdateUI();
 
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            Death();
         }
 
+    }
+
+    private void Death()
+    {
+        //Enemy Death
+        // Use Animation
+        //Show VFX
+        //Play SFX
+        Destroy(gameObject);
     }
 }

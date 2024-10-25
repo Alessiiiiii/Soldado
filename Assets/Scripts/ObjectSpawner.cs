@@ -8,9 +8,9 @@ public class ObjectSpawner : MonoBehaviour
     public float bulletForce;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -20,9 +20,16 @@ public class ObjectSpawner : MonoBehaviour
         {
 
             GameObject bulletClone =Instantiate(objectPrefab,transform.position,transform.rotation);
+
             Rigidbody bulletRigidBody = bulletClone.GetComponent<Rigidbody>();
-            bulletRigidBody.velocity = transform.forward * bulletForce;
+
+            bulletRigidBody.velocity = transform.up * bulletForce;
+
             Destroy(bulletClone, 2f);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
