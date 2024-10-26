@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour
 
     public int Health;
     public TextMeshProUGUI enemyHealthUI;
+   public GameController gameController;
 
 
     private void Start()
     {
         UpdateUI();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     private void UpdateUI()
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void ChangeHealth(int damage)
     {
-        Health += damage;
+        Health -= damage;
                 
         UpdateUI();
 
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
         // Use Animation
         //Show VFX
         //Play SFX
+        gameController.AddKill();
         Destroy(gameObject);
     }
 }
