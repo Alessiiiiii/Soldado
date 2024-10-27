@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 1947528254410923920}
   - component: {fileID: -6594621223627451855}
   - component: {fileID: 1967418243471977055}
+  - component: {fileID: 3558379923691549146}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: deadBodyPrefab
@@ -477,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdcb7f306ab254ca8204d3e3c314eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 150
   enemyHealthUI: {fileID: 2828565375769784079}
   gameController: {fileID: 0}
 --- !u!195 &1967418243471977055
@@ -502,3 +503,19 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3558379923691549146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083639695797042354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc1eb16cfa8bc94b8bebf476ca9cc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  player: {fileID: 0}
+  intitalDelay: 3
+  interval: 0.2
