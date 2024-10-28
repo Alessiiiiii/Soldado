@@ -25,7 +25,7 @@ public class EnemyNavigation : MonoBehaviour
 
 
             {
-                Debug.Log("Set destination: " + player.position);
+                Debug.Log ("Set destination: " + player.position);
 
                 agent.destination = player.position;
             }
