@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour
 {
@@ -8,11 +9,15 @@ public class Move : MonoBehaviour
     public float speed;
     public Vector2 inputVector;
 
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Star Game");
         transform.position = newPosition;
+
     }
 
     // Update is called once per frame
@@ -21,9 +26,9 @@ public class Move : MonoBehaviour
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
 
-        transform.Translate(inputVector.x*speed,0f, inputVector.y*speed);
-
-       
+        transform.Translate(inputVector.x * speed, 0f, inputVector.y * speed);
     }
-
 }
+
+
+

@@ -8,6 +8,9 @@ TagManager:
   - deadBodyPrefab
   - Enemy
   - Piso
+  - Goal
+  - item
+  - KillZone
   layers:
   - Default
   - TransparentFX

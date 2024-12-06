@@ -17,6 +17,9 @@ public void Salir ()
         Debug.Log("Aqui se cierra el juego");
     }
 
-    
-    
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

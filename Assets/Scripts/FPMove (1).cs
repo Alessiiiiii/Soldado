@@ -6,17 +6,15 @@ public class FPMove : MonoBehaviour
 {
     public float PlayerSpeed = 2.0f;
     Rigidbody rb;
-    public float jumpForce;
-    public bool CanJump;
-    public Rigidbody Rigidbody;
+    
+    
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        Rigidbody = GetComponent<Rigidbody>();
-        CanJump = true;
+        
     }
 
     void Update()
