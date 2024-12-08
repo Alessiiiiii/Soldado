@@ -56,8 +56,10 @@ public class Rigibody : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("item"))
         {
-            Debug.Log(WinText);
+            
             Destroy(collision.gameObject);
+            Debug.Log(WinText);
+            SceneManager.LoadScene(2);
         }
 
         if (collision.gameObject.CompareTag("Goal"))
@@ -87,12 +89,28 @@ public class Rigibody : MonoBehaviour
         if (other.gameObject.CompareTag("item"))
         {
             WinText.enabled=true;
+            SceneManager.LoadScene(2);
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
             GameOverText.enabled = true;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Trigger Exit:" + other.gameObject.name);
 
+
+        if (other.gameObject.CompareTag("KillZone"))
+        {
+            warningText.enabled = false;
+        }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Trigger Stay:" + other.gameObject.name);
+    }
+
+
+}
 

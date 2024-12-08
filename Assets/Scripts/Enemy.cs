@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public int Health;
     public TextMeshProUGUI enemyHealthUI;
    public GameController gameController;
+    public GameObject DeathEffect;
 
 
     private void Start()
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        if (DeathEffect != null) { Instantiate(DeathEffect, transform.position, Quaternion.identity); }
         //Enemy Death
         // Use Animation
         //Show VFX
